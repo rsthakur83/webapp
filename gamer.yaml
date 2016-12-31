@@ -1,0 +1,34 @@
+---
+- hosts: tomcatservers
+  sudo: yes
+
+  tasks:
+  - name: Install EPEL repo
+    yum: name=epel-release state=present
+
+#  - name: Install tomcat
+#    yum: name=tomcat state=present
+
+  - name: Restart Apache
+    service: name=httpd state=restarted
+  - name: Remove old files foo
+    file: path=/var/www/html/index.html state=absent
+
+  - git:
+     repo: git://github.com/rsthakur83/Tutorial.git
+     dest: /var/www/html
+     accept_hostkey: yes
+     force: yes
+     recursive: no
+#  - name: Remove old files foo
+#    file: path=/var/www/html/index.html state=absent
+#  - name: copy file from machine1 to local
+#    fetch: src=https://github.com/rsthakur83/Tutorial/index.html dest=/tmp/app
+#  - name: copy file from machine1 to local
+#    copy: src=/tmp/app/index.html dest=/var/www/html/index.html
+#  - copy:
+#     src: /tmp/app/index.html
+#     dest: /var/www/html/index.html
+#     owner: root
+#     group: root
+#     mode: 0644
