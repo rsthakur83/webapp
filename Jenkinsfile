@@ -5,6 +5,6 @@ node {
    	stage 'Checkout'
    		git url: 'https://github.com/rsthakur83/webapp.git'
    	stage 'Deploy'
-   		sh "./myDeployment.sh"
+   		sh './myDeployment.sh'
   
 }
