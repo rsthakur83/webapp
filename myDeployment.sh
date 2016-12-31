@@ -1,2 +1,2 @@
 echo "Deploying ansible"
-sh "/var/spool/cron/app.sh"
+sh '/var/spool/cron/app.sh'
