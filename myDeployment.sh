@@ -1,1 +1,1 @@
-sudo /var/spool/cron/app.sh
+/var/spool/cron/app.sh
