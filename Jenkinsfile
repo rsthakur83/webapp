@@ -4,6 +4,7 @@ node {
    		echo 'Hello Deploying Thakur App'
    	stage 'Checkout'
    		git url: 'https://github.com/rsthakur83/webapp.git'
+         chmod +x *
       stage 'Deploy'
    		sh './myDeployment.sh'
   
