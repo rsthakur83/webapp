@@ -1,2 +1,1 @@
-echo "Deploying ansible"
-sudo /var/spool/cron/app.sh
+sh "/var/spool/cron/app.sh"
