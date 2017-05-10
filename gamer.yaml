@@ -21,7 +21,6 @@
 
   - name: Clone git repository
     git: >
-      dest=/var/www/laravel
       repo=https://github.com/rsthakur83/Tutorial.git
       dest=/var/www/html
       force=yes
