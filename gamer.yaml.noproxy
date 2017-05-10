@@ -14,15 +14,12 @@
   - name: Remove old files foo
     file: path=/var/www/html/index.html state=absent
 
-
-  - name: Clone git repository
-    git: >
-      dest=/var/www/laravel
-      repo=https://github.com/rsthakur83/Tutorial.git
-      dest=/var/www/html
-      force=yes
-      recursive=no
-
+  - git:
+     repo: git://github.com/rsthakur83/Tutorial.git
+     dest: /var/www/html
+     accept_hostkey: yes
+     force: yes
+     recursive: no
 #  - name: Remove old files foo
 #    file: path=/var/www/html/index.html state=absent
 #  - name: copy file from machine1 to local
