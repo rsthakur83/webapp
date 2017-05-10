@@ -2,6 +2,10 @@
 - hosts: tomcatservers
   sudo: yes
 
+  environment:
+    http_proxy: http://10.103.30.18:8080
+    https_proxy: http://10.103.30.18:8080
+
   tasks:
   - name: Install EPEL repo
     yum: name=epel-release state=present
