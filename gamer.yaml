@@ -26,7 +26,6 @@
       force=yes
       recursive=no
 
-#  - name: copy file from machine1 to local
 #    fetch: src=https://github.com/rsthakur83/Tutorial/index.html dest=/tmp/app
 #  - name: copy file from machine1 to local
 #    copy: src=/tmp/app/index.html dest=/var/www/html/index.html
