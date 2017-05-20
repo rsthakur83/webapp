@@ -2,36 +2,21 @@
 - hosts: tomcatservers
   sudo: yes
 
-  environment:
-    http_proxy: http://10.103.30.18:8080
-    https_proxy: http://10.103.30.18:8080
+  vars:
+    app_version: release-0.01
+
 
   tasks:
   - name: Install EPEL repo
     yum: name=epel-release state=present
 
-#  - name: Install tomcat
-#    yum: name=tomcat state=present
 
   - name: Restart Apache
     service: name=httpd state=restarted
   - name: Remove old files foo
     file: path=/var/www/html/index.html state=absent
 
-
-  - name: Clone git repository
-    git: >
-      repo=https://github.com/rsthakur83/Tutorial.git
-      dest=/var/www/html
-      force=yes
-      recursive=no
-
-#    fetch: src=https://github.com/rsthakur83/Tutorial/index.html dest=/tmp/app
-#  - name: copy file from machine1 to local
-#    copy: src=/tmp/app/index.html dest=/var/www/html/index.html
-#  - copy:
-#     src: /tmp/app/index.html
-#     dest: /var/www/html/index.html
-#     owner: root
-#     group: root
-#     mode: 0644
+  - name: deploy website content
+    git: repo=https://github.com/rsthakur83/release.git
+         dest=/var/www/html
+         version={{ app_version }}
