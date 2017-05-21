@@ -20,3 +20,4 @@
     git: repo=https://github.com/rsthakur83/release.git
          dest=/var/www/html
          version={{ app_version }}
+         force: yes
