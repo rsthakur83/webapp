@@ -1,5 +1,5 @@
 #tomcat1 ansible_ssh_host=192.168.1.17
-tomcat1 ansible_ssh_host=192.168.0.33
+tomcat1 ansible_ssh_host=192.168.56.104
 
 [tomcatservers]
 nexus
